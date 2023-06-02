@@ -26,6 +26,60 @@
       "Serve hot with maple syrup, powdered sugar, or fruits."
     ]
   },
+  "chocolateCake": {
+    "quantity": 8,
+    "ingredients": {
+      "flour": 250,
+      "sugar": 200,
+      "eggs": 4,
+      "milk": 200,
+      "butter": 150,
+      "yeast": 0
+    },
+    "units": {
+      "flour": "g",
+      "sugar": "g",
+      "eggs": "unit",
+      "milk": "ml",
+      "butter": "g",
+      "yeast": "g"
+    },
+    "instructions": [
+      "Preheat the oven to 180°C.",
+      "In a mixing bowl, combine flour, sugar, and eggs.",
+      "Add milk and melted butter. Mix well until you get a smooth batter.",
+      "Pour the batter into a greased cake pan.",
+      "Bake for approximately 30 minutes.",
+      "Let it cool before removing from the pan and serving."
+    ]
+  },
+  "applePie": {
+    "quantity": 4,
+    "ingredients": {
+      "flour": 300,
+      "sugar": 100,
+      "eggs": 2,
+      "milk": 150,
+      "butter": 100,
+      "yeast": 0
+    },
+    "units": {
+      "flour": "g",
+      "sugar": "g",
+      "eggs": "unit",
+      "milk": "ml",
+      "butter": "g",
+      "yeast": "g"
+    },
+    "instructions": [
+      "Preheat the oven to 180°C.",
+      "In a mixing bowl, combine flour, sugar, and eggs.",
+      "Add milk and melted butter. Mix well until you get a smooth batter.",
+      "Pour the batter into a greased pie dish.",
+      "Bake for approximately 30 minutes, until the pie is golden.",
+      "Let it cool before serving."
+    ]
+  },
   "Crepes": {
     "quantity": 4,
     "ingredients": {
@@ -46,6 +100,28 @@
     },
     "instructions": [
       "jflskdjslfqjkdlfkqlkfmlqskfmlqksmfù"
+    ]
+  },
+  "cake": {
+    "quantity": 6,
+    "ingredients": {
+      "flour": 150,
+      "sugar": 67,
+      "eggs": 3,
+      "milk": 100,
+      "butter": 150,
+      "yeast": 5
+    },
+    "units": {
+      "flour": "g",
+      "sugar": "g",
+      "eggs": "unit",
+      "milk": "ml",
+      "butter": "g",
+      "yeast": "g"
+    },
+    "instructions": [
+      "jsleidfjlqfijmdkùkmfodqkk"
     ]
   }
 }

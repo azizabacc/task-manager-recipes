@@ -7,9 +7,10 @@ const fs = require('fs');
 const path = require('path');
 const rl = require('readline-sync');
 
+
 function main() {
     fn.options();
-    const option = rl.question(ts.tasks[3]);
+    const option = rl.question("");
     switch(option){
         case "1":
             fn.displayRecipeNames(rc.recipes);
@@ -73,6 +74,7 @@ function main() {
          
                 break;
     }
+    main();
 
 
 }

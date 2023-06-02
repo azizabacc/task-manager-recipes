@@ -1,8 +1,10 @@
 const { recipes } = require("./recipes");
 //display options 
 function options(){
+    console.log("Choose your option. tip 1 or 2 :")
     console.log("1. Check existing recipes.");
     console.log("2. add recipes.");
+    console.log("Ctrl + C for exit.");
 
 }
 // display recipes names
@@ -94,12 +96,7 @@ function displayRecalRecipeIngredients(recipeName, recipes, response) {
     }
   }
 //----------------------------------------------------------------------------------//
-  // part to add recipes
 
-  function addRecipe(recipeName,recipes){
-    recipes.push(recipeName)
-  }
-  
   
   
   
@@ -118,4 +115,4 @@ function displayRecalRecipeIngredients(recipeName, recipes, response) {
   
   
 module.exports = {options, displayRecipeNames, checkRecipeExists, displayRecipeIngredients, 
-    displayQuantity, checkQuantity, addRecipe};
+    displayQuantity, checkQuantity};
