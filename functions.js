@@ -50,7 +50,6 @@ function displayRecipeInstructions(recipeName, recipes) {
     if (recipeName in recipes) {
         const ingredients = recipes[recipeName].ingredients;
         let newIngredients = {};
-    console.log(ingredients);
     for (let ingredient in ingredients) {
       newIngredients[ingredient] = ingredients[ingredient] * 10 / 6;
     }
@@ -58,20 +57,35 @@ function displayRecipeInstructions(recipeName, recipes) {
   }
 
 }
-
+//display the recaculated recipe's ingredients
+function displayRecalRecipeIngredients(recipeName, recipes, response) {
+    if (recipeName in recipes) {
+      const ingredients = ingredientQuantities(recipeName,response)
+      const units = recipes[recipeName].units;
+      console.log(`Ingredients for ${recipeName}:`);
+      for (let ingredient in ingredients) {
+        console.log(`${ingredient}: ${ingredients[ingredient]} ${units[ingredient]}`);
+      }
+    } else {
+      console.log(`Recipe '${recipeName}' does not exist.`);
+    }
+  }
 
 
   function checkQuantity(recipeName, response) {
     if (recipeName in recipes) {
       const quantity = recipes[recipeName].quantity;
       if (response == quantity) {
+        displayRecipeIngredients(recipeName, recipes)
         displayRecipeInstructions(recipeName, recipes);
         // Ajoutez ici la logique pour afficher les instructions
       }else{
-        console.log(ingredientQuantities(recipeName, response));
+        displayRecalRecipeIngredients(recipeName, recipes, response) ;
+        displayRecipeInstructions(recipeName, recipes);
+
       }
     } else {
-      console.log(`Recipe '${recipeNameArg}' does not exist.`);
+      console.log(`Recipe '${recipeName}' does not exist.`);
     }
   }
   
