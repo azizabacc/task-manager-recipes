@@ -26,32 +26,26 @@
       "Serve hot with maple syrup, powdered sugar, or fruits."
     ]
   },
-  "macaron": {
-    "quantity": 12,
+  "Crepes": {
+    "quantity": 4,
     "ingredients": {
-      "almondFlour": 200,
-      "powderedSugar": 200,
-      "eggWhites": 150,
-      "granulatedSugar": 50,
-      "foodColoring": "as desired"
+      "flour": 110,
+      "sugar": 70,
+      "eggs": 4,
+      "milk": 666,
+      "butter": 78,
+      "yeast": 5
     },
     "units": {
-      "almondFlour": "g",
-      "powderedSugar": "g",
-      "eggWhites": "g",
-      "granulatedSugar": "g",
-      "foodColoring": ""
+      "flour": "g",
+      "sugar": "g",
+      "eggs": "unit",
+      "milk": "ml",
+      "butter": "g",
+      "yeast": "g"
     },
     "instructions": [
-      "Sift almond flour and powdered sugar together.",
-      "In a separate bowl, beat egg whites until foamy.",
-      "Gradually add granulated sugar while continuing to beat until stiff peaks form.",
-      "Fold the almond flour mixture into the beaten egg whites.",
-      "Add food coloring and mix until desired color is achieved.",
-      "Pipe small rounds of the mixture onto a baking sheet lined with parchment paper.",
-      "Let the macarons rest for 30 minutes to develop a skin.",
-      "Preheat the oven to 160°C and bake the macarons for about 15 minutes.",
-      "Remove from the oven and let them cool completely before filling and assembling."
+      "jflskdjslfqjkdlfkqlkfmlqskfmlqksmfù"
     ]
   }
 }

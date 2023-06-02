@@ -34,33 +34,36 @@ function main() {
             break;
             case "2":
                 const newRecipe = rl.question(ts.tasks[4]);
+                const recQuantity = parseInt(rl.question(ts.tasks[5]));
+                const ingredients = rc.recipes["waffles"].ingredients;
+                const newIngredients = [];
+          
+                for (ingr in ingredients) {
+                  let ingredientQuantity = parseInt(rl.question(`Enter the quantity of ${ingr} : `), 10);
+                  newIngredients.push( ingredientQuantity);
+                }
+                const recInstructions = rl.question(ts.tasks[6]);
                 //fn.addRecipe(newRecipe,rc.recipes);
                 rc.recipes[newRecipe]= {
-                    quantity: 12,
+                    quantity: recQuantity,
                     ingredients: {
-                      almondFlour: 200,
-                      powderedSugar: 200,
-                      eggWhites: 150,
-                      granulatedSugar: 50,
-                      foodColoring: "as desired"
+                        flour: newIngredients[0],
+                        sugar: newIngredients[1],
+                        eggs: newIngredients[2],
+                        milk: newIngredients[3],
+                        butter: newIngredients[4],
+                        yeast: newIngredients[5]
                     },
                     units: {
-                      almondFlour: "g",
-                      powderedSugar: "g",
-                      eggWhites: "g",
-                      granulatedSugar: "g",
-                      foodColoring: ""
+                        flour: "g",
+                        sugar: "g",
+                        eggs: "unit",
+                        milk: "ml",
+                        butter: "g",
+                        yeast: "g"
                     },
                     instructions: [
-                      "Sift almond flour and powdered sugar together.",
-                      "In a separate bowl, beat egg whites until foamy.",
-                      "Gradually add granulated sugar while continuing to beat until stiff peaks form.",
-                      "Fold the almond flour mixture into the beaten egg whites.",
-                      "Add food coloring and mix until desired color is achieved.",
-                      "Pipe small rounds of the mixture onto a baking sheet lined with parchment paper.",
-                      "Let the macarons rest for 30 minutes to develop a skin.",
-                      "Preheat the oven to 160°C and bake the macarons for about 15 minutes.",
-                      "Remove from the oven and let them cool completely before filling and assembling."
+                      recInstructions
                     ]
                   };
                   const recipesFilePath = path.join(__dirname, 'recipes.json');
