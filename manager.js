@@ -6,8 +6,7 @@ const fn = require('./functions.js');
 const fs = require('fs');
 const path = require('path');
 const rl = require('readline-sync');
-
-
+const userlist ={ "aziza" : "azizabacc" } 
 function main() {
     fn.options();
     const option = rl.question("");
@@ -78,5 +77,21 @@ function main() {
 
 
 }
-main();
 
+
+
+function login(){
+    UserName =rl.question("Username : ");
+    if (UserName in userlist){
+        password= rl.question("Password : ", {hideEchoBack : true})
+        if(password ==userlist[UserName]){
+            console.log(' Connexion... ' ) ;
+            main();
+        }else{
+            login();
+        }
+    }else{
+        login();
+    }
+}
+login();
