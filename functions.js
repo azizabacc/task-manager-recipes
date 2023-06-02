@@ -1,5 +1,10 @@
 const { recipes } = require("./recipes");
+//display options 
+function options(){
+    console.log("1. Check existing recipes.");
+    console.log("2. add recipes.");
 
+}
 // display recipes names
   function displayRecipeNames(recipes) {
     Object.keys(recipes).forEach((recipeName, index) => {
@@ -88,6 +93,12 @@ function displayRecalRecipeIngredients(recipeName, recipes, response) {
       console.log(`Recipe '${recipeName}' does not exist.`);
     }
   }
+//----------------------------------------------------------------------------------//
+  // part to add recipes
+
+  function addRecipe(recipeName,recipes){
+    recipes.push(recipeName)
+  }
   
   
   
@@ -106,5 +117,5 @@ function displayRecalRecipeIngredients(recipeName, recipes, response) {
   
   
   
-module.exports = { displayRecipeNames, checkRecipeExists, displayRecipeIngredients, 
-    displayQuantity, checkQuantity};
+module.exports = {options, displayRecipeNames, checkRecipeExists, displayRecipeIngredients, 
+    displayQuantity, checkQuantity, addRecipe};

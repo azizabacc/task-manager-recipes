@@ -1,4 +1,4 @@
-const recipes = {
+let recipes = {
     waffles: {
         quantity: 6,
       ingredients: {
