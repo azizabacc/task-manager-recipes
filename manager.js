@@ -1,18 +1,19 @@
 // Import modules
 const ts= require('./tasks.js');
+const c = require('./colors.js')
 let rc= require('./recipes.js');
 const fn = require('./functions.js');
-
 const fs = require('fs');
 const path = require('path');
 const rl = require('readline-sync');
-let userlist ={ "aziza" : "azizabacc" } 
+let userlist ={ "user" : "","password":"" } 
 function registerPassword(){
-    user = rl.question('Enter your Username : ');
+    console.log(c.backgroundColorGreen + c.colorRed + "Register Your Self"+c.reset)
+    user = rl.question(c.colorYellow +'Enter your Username : '+c.colorReset);
     pass = rl.questionNewPassword();
-    console.log('-- Password is ' + pass);
-    userlist.aziza = user;
-    userlist["aziza"]=pass;
+    console.log(c.backgroundColorRed+'-- Password is ' + pass+c.colorReset);
+    userlist.user = user;
+    userlist.password=pass;
 }
 
 
@@ -23,13 +24,13 @@ function main() {
     switch(option){
         case "1":
             fn.displayRecipeNames(rc.recipes);
-            const recipeName = rl.question(ts.tasks[0]);
+            const recipeName = rl.question(c.colorBlue+ts.tasks[0]+c.colorReset);
           
             if (recipeName in rc.recipes) {
               const recipe = rc.recipes[recipeName];
               //console.log(recipe);
               // if tip enter without text => default input = 'yes'
-              const answer =rl.question(ts.tasks[1],{defaultInput: 'yes'});
+              const answer =rl.question(c.colorBlue+ts.tasks[1]+c.colorReset,{defaultInput: 'yes'});
               if(answer=='yes'){
                   fn.displayRecipeIngredients(recipeName, rc.recipes); 
                   fn.displayQuantity(recipeName, rc.recipes);
@@ -92,10 +93,13 @@ function main() {
 
 
 function login(){
+    if(userlist["user"]==""){
+        registerPassword();
+    }
     UserName =rl.question("Username : ");
-    if (UserName in userlist){
+    if (UserName ==userlist["user"]){
         password= rl.question("Password : ", {hideEchoBack : true})
-        if(password ==userlist[UserName]){
+        if( password ==userlist["password"]){
             console.log(' Connexion... ' ) ;
             main();
         }else{
@@ -108,5 +112,8 @@ function login(){
 
 //registerPassword();
 //login();
+main();
 
-console.log("userlist.aziza  : ", userlist["aziza"]);
+
+
+
