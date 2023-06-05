@@ -6,10 +6,20 @@ const fn = require('./functions.js');
 const fs = require('fs');
 const path = require('path');
 const rl = require('readline-sync');
-const userlist ={ "aziza" : "azizabacc" } 
+let userlist ={ "aziza" : "azizabacc" } 
+function registerPassword(){
+    user = rl.question('Enter your Username : ');
+    pass = rl.questionNewPassword();
+    console.log('-- Password is ' + pass);
+    userlist.aziza = user;
+    userlist["aziza"]=pass;
+}
+
+
 function main() {
     fn.options();
-    const option = rl.question("");
+    //limite the user to enter 1 or 2
+    const option = rl.keyIn("",{limite :'$<1-2>'});
     switch(option){
         case "1":
             fn.displayRecipeNames(rc.recipes);
@@ -18,7 +28,8 @@ function main() {
             if (recipeName in rc.recipes) {
               const recipe = rc.recipes[recipeName];
               //console.log(recipe);
-              const answer =rl.question(ts.tasks[1]);
+              // if tip enter without text => default input = 'yes'
+              const answer =rl.question(ts.tasks[1],{defaultInput: 'yes'});
               if(answer=='yes'){
                   fn.displayRecipeIngredients(recipeName, rc.recipes); 
                   fn.displayQuantity(recipeName, rc.recipes);
@@ -94,4 +105,8 @@ function login(){
         login();
     }
 }
-login();
+
+//registerPassword();
+//login();
+
+console.log("userlist.aziza  : ", userlist["aziza"]);
